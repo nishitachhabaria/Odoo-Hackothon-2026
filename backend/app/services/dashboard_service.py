@@ -75,6 +75,7 @@ class DashboardService:
         organization = self._build_organization_summary(scope)
         users = self._build_user_summary(scope)
         assets = self._build_asset_summary(scope)
+        self.dashboard_repository.get_recent_activity(scope.department_id, scope.user_id, limit=20)
 
         return DashboardResponse(
             organization=DashboardOrganizationSummary(**organization),

@@ -109,4 +109,4 @@ def test_dashboard_scopes_employee_personal_data():
 def test_dashboard_routes_registered_in_app():
     """The dashboard router should be mounted on the application."""
 
-    assert any(getattr(route, "path", None) == "/api/v1/dashboard" for route in app.routes)
+    assert app.url_path_for("read_dashboard") == "/api/v1/dashboard"
