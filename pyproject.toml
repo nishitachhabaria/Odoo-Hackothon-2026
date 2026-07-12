@@ -1,0 +1,9 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "assetflow"
+version = "0.1.0"
+description = "AssetFlow enterprise asset and resource management system scaffold"
+requires-python = ">=3.11"

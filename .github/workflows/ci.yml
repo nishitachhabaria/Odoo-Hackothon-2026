@@ -1,0 +1,15 @@
+name: AssetFlow CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder workflow step
+        run: echo "AssetFlow CI placeholder"

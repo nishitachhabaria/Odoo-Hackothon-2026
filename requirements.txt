@@ -1,0 +1,10 @@
+# Core backend dependencies will be added during implementation.
+
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+alembic
+python-jose[cryptography]
+passlib[bcrypt]
+pydantic

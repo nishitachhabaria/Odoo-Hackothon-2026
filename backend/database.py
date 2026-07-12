@@ -1,0 +1,1 @@
+"""AssetFlow database wiring placeholder."""

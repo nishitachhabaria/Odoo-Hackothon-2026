@@ -1,2 +1,5 @@
-# Odoo-Hackothon-2026
-Odoo hackothon 2026 Project
+# AssetFlow
+
+Enterprise Asset & Resource Management System scaffold for the AssetFlow hackathon project.
+
+This repository currently contains the production-ready folder structure only.

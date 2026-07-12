@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  # Placeholder stack definition for AssetFlow.
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - APP_ENV=development
+    ports:
+      - "8000:8000"
