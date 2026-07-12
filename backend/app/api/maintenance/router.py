@@ -1,0 +1,1 @@
+"""Maintenance API router placeholder."""

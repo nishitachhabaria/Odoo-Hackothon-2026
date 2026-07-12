@@ -1,0 +1,1 @@
+"""Bookings API repository placeholder."""

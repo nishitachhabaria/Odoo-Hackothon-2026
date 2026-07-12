@@ -18,8 +18,7 @@ from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
 from app.database.init_db import init_db
 from app.api.auth.router import router as auth_router
-from app.middleware.execution_time import ExecutionTimeMiddleware
-from app.middleware.request_logger import RequestLoggingMiddleware
+from app.middleware import register_middlewares
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -30,10 +29,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Manage application startup and shutdown events."""
 
     logger.info("Starting %s v%s", settings.project_name, settings.version)
-    try:
-        init_db()
-    except Exception:  # pragma: no cover - startup safety net
-        logger.exception("AssetFlow database initialization skipped due to an error")
+    init_db()
     yield
     logger.info("Shutting down %s", settings.project_name)
 
@@ -55,8 +51,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(RequestLoggingMiddleware)
-app.add_middleware(ExecutionTimeMiddleware)
+
+register_middlewares(app)
 
 register_exception_handlers(app)
 app.include_router(auth_router)

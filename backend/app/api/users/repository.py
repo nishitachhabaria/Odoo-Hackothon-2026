@@ -1,0 +1,1 @@
+"""Users API repository placeholder."""

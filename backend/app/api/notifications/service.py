@@ -1,0 +1,1 @@
+"""Notifications API service placeholder."""

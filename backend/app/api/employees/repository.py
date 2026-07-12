@@ -1,0 +1,1 @@
+"""Employees API repository placeholder."""

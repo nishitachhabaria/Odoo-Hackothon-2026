@@ -33,9 +33,9 @@ def init_db() -> None:
     take over schema management when domain models are introduced.
     """
 
-    Base.metadata.create_all(bind=engine)
-
     try:
+        Base.metadata.create_all(bind=engine)
+
         with UserRepository.session_scope() as session:
             role_repository = RoleRepository(session)
             user_repository = UserRepository(session)
@@ -61,6 +61,8 @@ def init_db() -> None:
                 )
                 user_repository.add(admin_user)
 
-    except SQLAlchemyError:
-        logger.exception("Unable to seed default roles and admin account")
-        raise
+    except SQLAlchemyError as exc:
+        logger.warning(
+            "Database initialization skipped because the database is unavailable: %s",
+            exc,
+        )

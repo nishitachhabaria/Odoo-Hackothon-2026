@@ -1,0 +1,1 @@
+"""Dashboard API router placeholder."""

@@ -1,0 +1,1 @@
+"""Transfers API schema placeholder."""

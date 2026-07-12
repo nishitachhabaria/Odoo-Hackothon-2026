@@ -1,0 +1,1 @@
+"""Audits API router placeholder."""
