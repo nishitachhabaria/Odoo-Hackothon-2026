@@ -50,6 +50,24 @@ def create_jwt_token(
     return jwt.encode(payload, settings.secret_key, algorithm=settings.algorithm)
 
 
+def create_access_token(
+    subject: str,
+    expires_delta: timedelta | None = None,
+    additional_claims: dict[str, Any] | None = None,
+) -> str:
+    """Create an access token for API authentication.
+
+    This is an alias for the JWT token builder used by the authentication
+    service so the public API reads naturally.
+    """
+
+    return create_jwt_token(
+        subject=subject,
+        expires_delta=expires_delta,
+        additional_claims=additional_claims,
+    )
+
+
 def verify_jwt_token(token: str) -> dict[str, Any]:
     """Decode and validate a JWT token.
 
@@ -58,3 +76,9 @@ def verify_jwt_token(token: str) -> dict[str, Any]:
     """
 
     return jwt.decode(token, settings.secret_key, algorithms=[settings.algorithm])
+
+
+def decode_access_token(token: str) -> dict[str, Any]:
+    """Decode an access token and return its payload."""
+
+    return verify_jwt_token(token)

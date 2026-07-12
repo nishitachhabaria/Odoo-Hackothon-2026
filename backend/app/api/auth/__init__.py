@@ -1,1 +1,4 @@
-"""Authentication API package placeholder."""
+"""Authentication API exports for AssetFlow."""
+
+from app.api.auth.router import router
+
