@@ -16,6 +16,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
+from app.api.asset_categories.router import router as asset_category_router
+from app.api.departments.router import router as department_router
+from app.api.employees.router import router as employee_router
 from app.database.init_db import init_db
 from app.api.auth.router import router as auth_router
 from app.middleware import register_middlewares
@@ -56,6 +59,9 @@ register_middlewares(app)
 
 register_exception_handlers(app)
 app.include_router(auth_router)
+app.include_router(department_router)
+app.include_router(asset_category_router)
+app.include_router(employee_router)
 
 
 @app.get("/", tags=["Health"])

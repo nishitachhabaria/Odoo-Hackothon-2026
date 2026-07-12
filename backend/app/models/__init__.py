@@ -1,5 +1,7 @@
 """ORM models package exports for AssetFlow."""
 
+from app.models.asset_category import AssetCategory
+from app.models.department import Department
 from app.models.role import Role
 from app.models.user import User
 

@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import date, datetime
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+from app.schemas.department import DepartmentReference
 
 EMAIL_PATTERN = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
 PASSWORD_PATTERN = re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$")
@@ -92,8 +94,13 @@ class UserResponse(BaseModel):
     first_name: str
     last_name: str
     email: str
+    employee_code: str | None = None
+    designation: str | None = None
+    joining_date: date | None = None
     phone: str | None = None
+    profile_image: str | None = None
     department_id: UUID | None = None
+    department: DepartmentReference | None = None
     status: str
     is_active: bool
     created_at: datetime

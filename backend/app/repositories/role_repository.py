@@ -21,6 +21,12 @@ class RoleRepository(BaseRepository[Role]):
         statement = select(Role).where(Role.name == name)
         return self.session.execute(statement).scalar_one_or_none()
 
+    def get_by_id(self, role_id: int) -> Role | None:
+        """Fetch a role by its primary key."""
+
+        statement = select(Role).where(Role.id == role_id)
+        return self.session.execute(statement).scalar_one_or_none()
+
     def get_or_create(self, name: str, description: str | None = None) -> Role:
         """Return an existing role or create a new one."""
 
