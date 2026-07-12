@@ -1,8 +1,21 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { DashboardPage } from "./pages/dashboard/DashboardPage";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { OrganizationPage } from "./pages/organization/OrganizationPage";
+import { DepartmentsPage } from "./pages/organization/DepartmentsPage";
+import { EmployeesPage } from "./pages/organization/EmployeesPage";
+import { AssetCategoriesPage } from "./pages/organization/AssetCategoriesPage";
+import { AssetsPage } from "./pages/assets/AssetsPage";
+import { AllocationsPage } from "./pages/allocation/AllocationsPage";
+import { TransfersPage } from "./pages/transfers/TransfersPage";
+import { BookingsPage } from "./pages/bookings/BookingsPage";
+import { MaintenancePage } from "./pages/maintenance/MaintenancePage";
+import { AuditsPage } from "./pages/audit/AuditsPage";
+import { ReportsPage } from "./pages/reports/ReportsPage";
+import { NotificationsPage } from "./pages/notifications/NotificationsPage";
+import { SettingsPage } from "./pages/settings/SettingsPage";
 import { Layout } from "./layouts/Layout";
 
 function App() {
@@ -15,16 +28,19 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<DashboardPage />} />
           <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="organization/*" element={<div className="p-6 text-slate-700">Organization pages coming soon</div>} />
-          <Route path="assets/*" element={<div className="p-6 text-slate-700">Assets pages coming soon</div>} />
-          <Route path="allocations/*" element={<div className="p-6 text-slate-700">Allocations pages coming soon</div>} />
-          <Route path="transfers/*" element={<div className="p-6 text-slate-700">Transfers pages coming soon</div>} />
-          <Route path="bookings/*" element={<div className="p-6 text-slate-700">Bookings pages coming soon</div>} />
-          <Route path="maintenance/*" element={<div className="p-6 text-slate-700">Maintenance pages coming soon</div>} />
-          <Route path="audits/*" element={<div className="p-6 text-slate-700">Audits pages coming soon</div>} />
-          <Route path="reports/*" element={<div className="p-6 text-slate-700">Reports pages coming soon</div>} />
-          <Route path="notifications" element={<div className="p-6 text-slate-700">Notifications center coming soon</div>} />
-          <Route path="settings" element={<div className="p-6 text-slate-700">Settings coming soon</div>} />
+          <Route path="organization" element={<OrganizationPage />} />
+          <Route path="organization/departments" element={<DepartmentsPage />} />
+          <Route path="organization/employees" element={<EmployeesPage />} />
+          <Route path="organization/asset-categories" element={<AssetCategoriesPage />} />
+          <Route path="assets" element={<AssetsPage />} />
+          <Route path="allocations" element={<AllocationsPage />} />
+          <Route path="transfers" element={<TransfersPage />} />
+          <Route path="bookings" element={<BookingsPage />} />
+          <Route path="maintenance" element={<MaintenancePage />} />
+          <Route path="audits" element={<AuditsPage />} />
+          <Route path="reports" element={<ReportsPage />} />
+          <Route path="notifications" element={<NotificationsPage />} />
+          <Route path="settings" element={<SettingsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

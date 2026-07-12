@@ -15,7 +15,7 @@ class BookingCreate(BaseModel):
     start_datetime: datetime
     end_datetime: datetime
 
-    @root_validator
+    @root_validator(skip_on_failure=True)
     def validate_datetimes(cls, values: dict[str, object]) -> dict[str, object]:
         start_datetime = values.get("start_datetime")
         end_datetime = values.get("end_datetime")
@@ -31,7 +31,7 @@ class BookingUpdate(BaseModel):
     end_datetime: datetime | None = None
     status: str | None = None
 
-    @root_validator
+    @root_validator(skip_on_failure=True)
     def validate_datetimes(cls, values: dict[str, object]) -> dict[str, object]:
         start_datetime = values.get("start_datetime")
         end_datetime = values.get("end_datetime")
