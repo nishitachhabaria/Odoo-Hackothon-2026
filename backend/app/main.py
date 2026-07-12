@@ -21,6 +21,7 @@ from app.api.assets.router import router as assets_router
 from app.api.asset_categories.router import router as asset_category_router
 from app.api.departments.router import router as department_router
 from app.api.employees.router import router as employee_router
+from app.api.bookings.router import router as bookings_router
 from app.database.init_db import init_db
 from app.api.auth.router import router as auth_router
 from app.middleware import register_middlewares
@@ -66,6 +67,7 @@ app.include_router(assets_router)
 app.include_router(department_router)
 app.include_router(asset_category_router)
 app.include_router(employee_router)
+app.include_router(bookings_router)
 
 
 @app.get("/", tags=["Health"])

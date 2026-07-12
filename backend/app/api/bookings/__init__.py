@@ -1,1 +1,1 @@
-"""Bookings API package placeholder."""
+"""Bookings API package."""
