@@ -1,6 +1,5 @@
-import { Area, Bar, PieChart, Sparkline } from "lucide-react";
 import { motion } from "framer-motion";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, Pie, Cell, CartesianGrid } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, CartesianGrid } from "recharts";
 
 const summaryCards = [
   { label: "Total Assets", value: "124", change: "+12%", color: "bg-blue-500" },
@@ -98,7 +97,7 @@ export function DashboardPage() {
                   ))}
                 </Pie>
                 <Tooltip />
-              </Pie>
+              </PieChart>
             </ResponsiveContainer>
           </div>
           <div className="mt-6 grid gap-3">

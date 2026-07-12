@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Bell, BookOpen, CheckSquare, ClipboardList, Home, Layers, MapPin, Shield, ShieldCheck, SlidersHorizontal, User, Users, Wallet } from "lucide-react";
+import { Bell, BookOpen, CheckSquare, ClipboardList, Home, Layers, MapPin, Shield, ShieldCheck, SlidersHorizontal, User, Users, Wallet, BarChart } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", path: "/dashboard", icon: Home },
