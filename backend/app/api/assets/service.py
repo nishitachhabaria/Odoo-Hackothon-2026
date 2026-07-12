@@ -1,1 +1,3 @@
-"""Assets API service placeholder."""
+"""Asset API service facade."""
+
+from app.services.asset_service import AssetService

@@ -16,6 +16,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
+from app.api.dashboard.router import router as dashboard_router
+from app.api.assets.router import router as assets_router
 from app.api.asset_categories.router import router as asset_category_router
 from app.api.departments.router import router as department_router
 from app.api.employees.router import router as employee_router
@@ -59,6 +61,8 @@ register_middlewares(app)
 
 register_exception_handlers(app)
 app.include_router(auth_router)
+app.include_router(dashboard_router)
+app.include_router(assets_router)
 app.include_router(department_router)
 app.include_router(asset_category_router)
 app.include_router(employee_router)

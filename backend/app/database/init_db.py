@@ -6,12 +6,13 @@ import logging
 
 from sqlalchemy.exc import SQLAlchemyError
 
+from app.core.security import get_password_hash
 from app.database.base import Base
 from app.database.session import engine
-from app.models import Role, User
+from app.models.role import Role
+from app.models.user import User
 from app.repositories.role_repository import RoleRepository
 from app.repositories.user_repository import UserRepository
-from app.core.security import get_password_hash
 
 logger = logging.getLogger(__name__)
 
